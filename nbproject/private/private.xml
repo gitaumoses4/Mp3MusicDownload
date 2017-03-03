@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/var/www/html/Mp3Downloader/resources/views/juices.php</file>
+            <file>file:/var/www/html/Mp3Downloader/app/Globals/Constants.php</file>
+            <file>file:/var/www/html/Mp3Downloader/resources/views/pages/index.blade.php</file>
+            <file>file:/var/www/html/Mp3Downloader/resources/views/widgets/popular_artists.blade.php</file>
+            <file>file:/var/www/html/Mp3Downloader/resources/views/widgets/navigation.blade.php</file>
+            <file>file:/var/www/html/Mp3Downloader/public/index.php</file>
+            <file>file:/var/www/html/Mp3Downloader/app/MusicInfo.php</file>
+            <file>file:/var/www/html/Mp3Downloader/resources/views/layouts/body.blade.php</file>
+            <file>file:/var/www/html/Mp3Downloader/app/Http/Controllers/SearchController.php</file>
+            <file>file:/var/www/html/Mp3Downloader/resources/views/pages/top_artists.blade.php</file>
+            <file>file:/var/www/html/Mp3Downloader/public/css/index.css</file>
+        </group>
+    </open-files>
+</project-private>

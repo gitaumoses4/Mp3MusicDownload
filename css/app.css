@@ -1,0 +1,254 @@
+.search-form{
+
+}
+
+body,html{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+button{
+    transition: all 0.5s;
+}
+
+label{
+    color:black;
+}
+#search-field{
+    border-radius: 0px;
+    height: 50px;
+}
+
+.beautiful{
+    font-family: Quicksand,sans-serif;
+}
+#search-button{
+    border-radius: 0px;
+    transition: all 0.5s;
+}
+
+.card{
+    background: white;
+    box-shadow:0 1px 1px 0 rgba(0,0,0,0.16),0 1px 1px 0 rgba(0,0,0,0.12);
+}
+
+.light{
+    color: #666;
+}
+
+#main{
+    margin-top: 20px;
+}
+
+line hr{
+    width: 60px;height: 2px;background:#1976d2;float:left;margin:0px;
+}
+line hr:last-child{
+    background:#ccc;
+}
+.abel-header{
+    font-family: Abel, sans-serif;
+}
+.accent{
+    color: #1976d2;
+}
+.accent-background{
+    background: #1976d2;
+}
+a{
+    text-decoration: none !important;
+    margin:0px;
+}
+
+.link{
+    color: #666;
+    transition:color 0.5s;
+}
+
+.link-light{
+    color: #888;
+}
+
+.link:hover{
+    color:#1976d2;
+}
+
+.music-title{
+    font-family: 'Abel', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.music-artist{
+    font-family: 'Josefin Sans',sans-serif;
+    font-size: 14px;
+    text-align: left;
+}
+
+#popular-artists{
+    border-left: 1px solid #ccc;
+}
+#popular-music{
+    border-right: 1px solid #ccc;
+    margin-right: -1px;
+}
+
+.normal-padding{
+    padding:10px;
+}
+
+.normal-margin{
+    margin: 10px;
+}
+
+.small-margin{
+    margin: 5px;
+}
+
+.small-padding{
+    padding: 5px;
+}
+
+.large-margin{
+    margin:20px;
+}
+
+.large-padding{
+    padding: 20px;
+}
+
+.recent-search{
+    transition: background 0.5s;
+}
+
+.recent-search:hover{
+    background: #1976d2;
+}
+
+#sources-form{
+    padding: 20px;
+}
+.nothing-yet{
+    position: relative;
+    color: #B0BEC5;
+    font-weight: lighter;
+    top: 30%;
+    font-family: Abel, sans-serif;
+    text-align: center;
+    vertical-align: middle;
+}
+.ui-autocomplete {
+    position: absolute;
+    z-index: 1000;
+    cursor: default;
+    padding: 0;
+    margin-top: 2px;
+    list-style: none;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.ui-autocomplete > li {
+    padding: 3px 20px;
+}
+.ui-autocomplete > li.ui-state-focus {
+    background-color: #DDD;
+}
+.ui-helper-hidden-accessible {
+    display: none;
+}
+
+.song-title{
+    font-family: "Abel" , sans-serif;
+    font-size: 15px;
+}
+
+.material-switch > input[type="checkbox"] {
+    display: none;   
+}
+
+.material-switch > label {
+    cursor: pointer;
+    height: 0px;
+    position: relative; 
+    width: 40px;  
+}
+
+.material-switch > label::before {
+    background: rgb(0, 0, 0);
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    content: '';
+    height: 16px;
+    margin-top: -8px;
+    position:absolute;
+    opacity: 0.3;
+    transition: all 0.4s ease-in-out;
+    width: 40px;
+}
+.material-switch > label::after {
+    background: rgb(255, 255, 255);
+    border-radius: 16px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    content: '';
+    height: 24px;
+    left: -4px;
+    margin-top: -8px;
+    position: absolute;
+    top: -4px;
+    transition: all 0.3s ease-in-out;
+    width: 24px;
+}
+.material-switch > input[type="checkbox"]:checked + label::before {
+    background: inherit;
+    opacity: 0.5;
+}
+.material-switch > input[type="checkbox"]:checked + label::after {
+    background: inherit;
+    left: 20px;
+}
+
+.source-display > center >  input[type="checkbox"]{
+    display : none;
+}
+
+.source-display > center > h5{
+    text-transform: capitalize;
+    text-align: center;
+}
+.source-display > center >  img{
+    width: 50px;
+    height: 50px;
+}
+
+.source-display{
+    border: 1px solid transparent;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.source-display-not-checked{
+    border: 2px solid #ccc;
+    background: #f0f0f0;
+    opacity: 0.5;
+}
+
+.source-display-checked{
+    border: 2px solid #1976d2;
+}
+
+.source-display > center{
+    transition: all 0.1s;
+}
+
+.source-display > center:hover{
+    transform: scale(1.1);
+}
