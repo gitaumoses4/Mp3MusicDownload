@@ -67,8 +67,5 @@ $(document).ready(function () {
     $(".result .buttons a:last-child").addClass("btn-default");
     $(".result .title").addClass("abel-header");
     $(".download .buttons a").addClass("btn btn-default");
-
-    $(".download").ready(function () {
-        alert($(this).attr("href"));
-    });
+    
 });

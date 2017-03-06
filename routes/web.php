@@ -40,3 +40,5 @@ Route::get("/editSources", ['uses' => 'MainController@editSources', 'as' => 'edi
 Route::get("/juices", function() {
     return view("juices");
 });
+
+Route::get("/checkDownload", ['uses' => 'CheckDownloadController@index', 'as' => 'checkDownload']);

@@ -21,7 +21,28 @@ $(document).ready(function () {
     }
 
     function t(a, b, c) {
-        $(a + " .progress").html("The file is ready. Please click the download button to start the download."), $(a + " .buttons .link_download").attr("href", "http://" + i[c] + ".yt-downloader.org/download.php?id=" + b), $(a + " .buttons").show()
+        var link = "http://" + i[c] + ".yt-downloader.org/download.php?id=" + b;
+        $.ajax({
+            type: "GET",
+            url: "checkDownload",
+            data: {
+                link: link
+            },
+            success: function (response) {
+                response = eval('(' + response + ')');
+                if (response.status === "error") {
+                    a.hide();
+                } else {
+                    if (response.responseText.fileSize > 500) {
+                        $(a + " .progress").html("The file is ready. Please click the download button to start the download."), $(a + " .buttons .link_download").attr("href", "http://" + i[c] + ".yt-downloader.org/download.php?id=" + b), $(a + " .buttons").show()
+                    } else {
+                        $(a + " .progress").html("This file does not have a download link. Kindly check the results for similar mp3's");
+                    }
+                }
+            }
+        });
+
+
     }
 
     function u(a, b, c) {
@@ -41,7 +62,7 @@ $(document).ready(function () {
                     case 0:
                     case 1:
                     case 2:
-                        $(a + " .progress").html(f[e.progress] + ' video <img src="images/loading.gif" alt="" class="loading-img">');
+                        $(a + " .progress").html(f[e.progress] + ' video <img src="images/ajax-loader.gif" alt="" class="loading-img">');
                         break;
                     case 3:
                         d[c] = !0, t(a, b, e.sid)
@@ -115,7 +136,7 @@ $(document).ready(function () {
     var b = '',
             c = {},
             d = "",
-            e = '<div id="conversion_wrapper"><div id="conversion"><p class="title">loading title <img src="images/loading.gif" alt="" class="loading-img"></p><p class="progress">checking video <img src="images/loading.gif" alt="" class="loading-img"></p><div class="buttons"><a href="" rel="nofollow" class="link_download">Download</a><a href="" class="link_cloud_menu conversion">Save to cloud</a><a href="https://www.facebook.com/sharer/sharer.php?u=' + pageUrl + '" rel="nofollow" target="_blank">Share on Facebook</a></div><div class="cloud_menu"><div class="cloud_buttons"><p>Choose a cloud:</p><a href="" class="d conversion">Dropbox</a><a href="" class="g conversion">Google Drive</a><a href="" class="m conversion">Microsoft OneDrive</a></div><p class="cloud_progress"></p><div class="cloud_ready"><a id="upload_conversion" href="" class="conversion">Save</a></div></div><div class="ad">' + a + '</div></div><div class="h_rule"></div></div>',
+            e = '<div id="conversion_wrapper"><div id="conversion"><p class="title">loading title <img src="images/ajax-loader.gif" alt="" class="loading-img"></p><p class="progress">checking video <img src="images/ajax-loader.gif" alt="" class="loading-img"></p><div class="buttons"><a href="" rel="nofollow" class="link_download">Download</a><a href="" class="link_cloud_menu conversion">Save to cloud</a><a href="https://www.facebook.com/sharer/sharer.php?u=' + pageUrl + '" rel="nofollow" target="_blank">Share on Facebook</a></div><div class="cloud_menu"><div class="cloud_buttons"><p>Choose a cloud:</p><a href="" class="d conversion">Dropbox</a><a href="" class="g conversion">Google Drive</a><a href="" class="m conversion">Microsoft OneDrive</a></div><p class="cloud_progress"></p><div class="cloud_ready"><a id="upload_conversion" href="" class="conversion">Save</a></div></div><div class="ad">' + a + '</div></div><div class="h_rule"></div></div>',
             f = "",
             g = "",
             h = "",
@@ -198,7 +219,7 @@ $(document).ready(function () {
         var c = {
             cancel: "Upload aborted.",
             error: "A error occured - mp3 can not be uploaded to CLOUD_PROVIDER.",
-            progress: 'Uploading mp3 to CLOUD_PROVIDER <img src="images/loading.gif" alt="" class="loading-gif">',
+            progress: 'Uploading mp3 to CLOUD_PROVIDER <img src="images/ajax-loader.gif" alt="" class="loading-gif">',
             success: "Upload to CLOUD_PROVIDER complete."
         };
         switch (a) {
@@ -217,7 +238,7 @@ $(document).ready(function () {
                         $(b + " .cloud_progress").html(c.success.replace(/CLOUD_PROVIDER/, "Dropbox")), $(b + " .cloud_ready").hide()
                     }
                 };
-                $(b + " .cloud_progress").html('Preparing an upload to Dropbox <img src="images/loading.gif" alt="" class="loading-gif">').show(), Dropbox.save($(b + " .link_download").attr("href"), $.trim($(b + " .title").html()) + ".mp3", d);
+                $(b + " .cloud_progress").html('Preparing an upload to Dropbox <img src="images/ajax-loader.gif" alt="" class="loading-gif">').show(), Dropbox.save($(b + " .link_download").attr("href"), $.trim($(b + " .title").html()) + ".mp3", d);
                 break;
             case "m":
                 var e = $.trim($(b + " .title").html()) + ".mp3";
@@ -239,7 +260,7 @@ $(document).ready(function () {
                         $(b + " .cloud_progress").html(c.success.replace(/CLOUD_PROVIDER/, "Microsoft OneDrive")), $(b + " .cloud_ready").hide()
                     }
                 };
-                $(b + " .cloud_progress").html('Preparing an upload to Microsoft OneDrive <img src="images/loading.gif" alt="" class="loading-gif">').show(), OneDrive.save(d)
+                $(b + " .cloud_progress").html('Preparing an upload to Microsoft OneDrive <img src="images/ajax-loader.gif" alt="" class="loading-gif">').show(), OneDrive.save(d)
         }
         return !1
     }), $(document).on("click", ".cloud_buttons a", function () {
@@ -250,7 +271,7 @@ $(document).ready(function () {
             var e = !0;
         else
             var e = !1;
-        switch ($(d + " .cloud_buttons").hide(), e && $(d + " .cloud_progress").html('loading cloud script <img src="images/loading.gif" alt="" class="loading-gif">').show(), b) {
+        switch ($(d + " .cloud_buttons").hide(), e && $(d + " .cloud_progress").html('loading cloud script <img src="images/ajax-loader.gif" alt="" class="loading-gif">').show(), b) {
             case "d":
                 if (e) {
                     var f = document.createElement("script");
@@ -373,7 +394,7 @@ $(document).ready(function () {
         var e = '<div id="download_' + b + '" class="download"><p class="title">TITLE</p><p class="progress">PROGRESS_TEXT</p><div class="buttons" style="CSS_BUTTONS"><a href="LINK_DOWNLOAD" rel="nofollow" class="link_download ' + b + '">Download</a><a href="" class="link_cloud_menu ' + b + '">Save to Cloud</a><a href="https://www.facebook.com/sharer.php?u=' + pageUrl + '" rel="nofollow" target="_blank">Share on Facebook</a></div><div class="cloud_menu"><div class="cloud_buttons"><p>Choose a cloud:</p><a href="" class="d ' + b + '">Dropbox</a><a href="" class="g ' + b + '">Google Drive</a><a href="" class="m ' + b + '">Microsoft OneDrive</a></div><p class="cloud_progress"></p><div class="cloud_ready"><a id="upload_' + b + '" href="" class="' + b + '">Save</a></div></div><div class="ad">' + a + "</div></div>  ";
         switch (c[0]) {
             case 1:
-                e = e.replace(/TITLE/, $("#result_" + b + " .title").html()).replace(/PROGRESS_TEXT/, 'checking video <img src="images/loading.gif" alt="" class="loading-img">').replace(/CSS_BUTTONS/, "display:none;").replace(/LINK_DOWNLOAD/, "");
+                e = e.replace(/TITLE/, $("#result_" + b + " .title").html()).replace(/PROGRESS_TEXT/, 'checking video <img src="images/ajax-loader.gif" alt="" class="loading-img">').replace(/CSS_BUTTONS/, "display:none;").replace(/LINK_DOWNLOAD/, "");
                 break;
             default:
                 e = e.replace(/TITLE/, $("#result_" + b + " .title").html()).replace(/PROGRESS_TEXT/, "The song is available for download - by clicking on the download button you'll start the download.").replace(/CSS_BUTTONS/, "").replace(/LINK_DOWNLOAD/, "http://mjcdn.cc/" + c[0] + "/" + c[1] + "/" + c[2] + "/")
