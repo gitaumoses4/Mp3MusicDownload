@@ -1,4 +1,4 @@
-var pageUrl = "<?php echo \App\Globals\Constants::WEBSITE_URL; ?>";
+var pageUrl = "http://www.mp3musicdownload.hol.es/";
 $(document).ready(function () {
     function l(a, b) {
         $(a + " .cloud_progress").html(b)

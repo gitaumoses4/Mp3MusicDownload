@@ -6,7 +6,7 @@
         <a href="{{ URL::route("search",array("query"=>$popular->artistName )) }}" class="music-artist link link-light">{{ $popular->artistName}}</a>
     </div>
     <div class="col-sm-4">
-        <a href="{{ URL::route("search",array()"query"=>$popular->name )) }}">
+        <a href="{{ URL::route("search",array("query"=>$popular->name )) }}">
             <button class="btn btn-primary btn-sm">Download</button>
         </a>
     </div>
