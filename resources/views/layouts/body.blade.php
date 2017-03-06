@@ -4,7 +4,10 @@
         @include("widgets.searchForm")
     </center>
 </div>
-<hr style="margin:0px">
+<!-- Begin BidVertiser code -->
+<SCRIPT SRC="http://bdv.bidvertiser.com/BidVertiser.dbm?pid=764172&bid=1874442" TYPE="text/javascript"></SCRIPT>
+<!-- End BidVertiser code --> 
+<hr style="margin:0px"> 
 <div id="main" class="row" style="padding:0px;margin:0px">
     <div class="col-sm-2"></div>
     <div class="col-sm-8">
