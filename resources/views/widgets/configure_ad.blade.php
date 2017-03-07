@@ -21,7 +21,7 @@
                     <div class="small-padding">
                         <div class="form-group">
                             <div class="material-switch pull-right">
-                                <input id="{{ $advert->adId }}-check" name="top-ad-check" type="checkbox" @if($advert->visible == 1) {{ "checked" }} @endif >
+                                <input id="{{ $advert->adId }}-check" name="visibility" type="checkbox" @if($advert->visible == 1) {{ "checked" }} @endif >
                                        <label for="{{ $advert->adId }}-check" class="label-primary"></label>
                             </div>
                         </div>
@@ -30,7 +30,7 @@
                 </div>
                 <div class="panel-body">
                     <div class="form-group">
-                        <input  type="text" class="form-control autocomplete" name="adCode" placeholder='Enter Advert Code'>
+                        <input  type="text" class="form-control autocomplete" name="code" placeholder='Enter Advert Code'>
                     </div>
                     <div class="form-group">
                         <input class="btn btn-primary submit-advertisement-form" data-form="advert-form-{{ $advert->adId }}" value="Submit"/>
