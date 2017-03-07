@@ -156,7 +156,13 @@ class SearchController extends Controller {
             $resp = "<div class=\"results\"><p>Could not retrieve your search query. Please try again!</p></div>";
         }
 
-        $data = array("results" => $resp, "query" => $query, "page" => 'search', "sources" => $sources, "recent_searches" => $recentSearches, "selected_sources" => $searchSources);
+        $adverts = array("top", "left", "right", "bottom", "extremeRight");
+        $advertisements = array();
+        foreach ($adverts as $advert) {
+            $advertisements[$advert] = Advertisement::findOrFail($advert);
+            $advertisements[$advert]->adId = $advert;
+        }
+        $data = array("advertisements" => $advertisements, "results" => $resp, "query" => $query, "page" => 'search', "sources" => $sources, "recent_searches" => $recentSearches, "selected_sources" => $searchSources);
         return view("pages.search", $data);
     }
 
