@@ -8,6 +8,7 @@ use App\Globals\Constants;
 use App\YouTubeMp3;
 use App\RecentSearch;
 use DB;
+use App\Advertisement;
 
 class SearchController extends Controller {
 
