@@ -6,6 +6,7 @@ use App\Source;
 use Illuminate\Routing\Controller as BaseController;
 use App\RecentSearch;
 use App\MusicInfo;
+use App\Advertisement;
 
 class MainController extends BaseController {
 
@@ -30,6 +31,12 @@ class MainController extends BaseController {
         $this->popularMusic = $this->musicInfo->getTopTracks();
         $this->popularArtists = $this->musicInfo->getTopArtists();
         $this->recentSearches = RecentSearch::limit(MainController::LIMIT)->offset(0)->get()->sortByDesc("created_at");
+        $adverts = array("top", "left", "right", "bottom", "extremeRight");
+        $advertisements = array();
+        foreach ($adverts as $advert) {
+            $advertisements[$advert] = Advertisement::findOrFail($advert);
+        }
+        $this->advertisements = $advertisements;
     }
 
     public function index() {
@@ -39,7 +46,9 @@ class MainController extends BaseController {
             "selected_sources" => MainController::searchSources,
             "popular_music" => array_slice($this->popularMusic, 0, MainController::POPULAR_MUSIC_MAX),
             "sources" => $this->mp3sources,
-            "popular_artists" => array_slice($this->popularArtists, 0, MainController::POPULAR_ARTISTS_MAX));
+            "popular_artists" => array_slice($this->popularArtists, 0, MainController::POPULAR_ARTISTS_MAX),
+            "advertisements" => $this->advertisements
+        );
         $view = view("pages.index", $data);
 
         return response($view);
@@ -50,7 +59,8 @@ class MainController extends BaseController {
             "page" => "about",
             "recent_searches" => $this->recentSearches,
             "selected_sources" => MainController::searchSources,
-            "sources" => $this->mp3sources,);
+            "sources" => $this->mp3sources,
+            "advertisements" => $this->advertisements);
         return view("pages.about", $data);
     }
 
@@ -59,7 +69,8 @@ class MainController extends BaseController {
             "page" => "privacy",
             "recent_searches" => $this->recentSearches,
             "selected_sources" => MainController::searchSources,
-            "sources" => $this->mp3sources,);
+            "sources" => $this->mp3sources,
+            "advertisements" => $this->advertisements);
         return view("pages.privacy", $data);
     }
 
@@ -68,7 +79,8 @@ class MainController extends BaseController {
             "page" => "howto",
             "recent_searches" => $this->recentSearches,
             "selected_sources" => MainController::searchSources,
-            "sources" => $this->mp3sources,);
+            "sources" => $this->mp3sources,
+            "advertisements" => $this->advertisements);
         return view("pages.howto", $data);
     }
 
@@ -78,7 +90,8 @@ class MainController extends BaseController {
             "recent_searches" => $this->recentSearches,
             "selected_sources" => MainController::searchSources,
             "sources" => $this->mp3sources,
-            "popular_artists" => $this->popularArtists);
+            "popular_artists" => $this->popularArtists,
+            "advertisements" => $this->advertisements);
         return view("pages.top_artists", $data);
     }
 
@@ -89,7 +102,8 @@ class MainController extends BaseController {
             "selected_sources" => MainController::searchSources,
             "popular_music" => $this->popularMusic,
             "sources" => $this->mp3sources,
-            "popular_artists" => $this->popularArtists);
+            "popular_artists" => $this->popularArtists,
+            "advertisements" => $this->advertisements);
         return view("pages.popular_music", $data);
     }
 
@@ -98,7 +112,8 @@ class MainController extends BaseController {
             "page" => "dmca",
             "recent_searches" => $this->recentSearches,
             "selected_sources" => MainController::searchSources,
-            "sources" => $this->mp3sources,);
+            "sources" => $this->mp3sources,
+            "advertisements" => $this->advertisements);
         return view("pages.dmca", $data);
     }
 
@@ -107,7 +122,8 @@ class MainController extends BaseController {
             "page" => "editSources",
             "recent_searches" => $this->recentSearches,
             "selected_sources" => MainController::searchSources,
-            "sources" => $this->mp3sources,);
+            "sources" => $this->mp3sources,
+            "advertisements" => $this->advertisements);
         return view("pages.edit_sources", $data);
     }
 

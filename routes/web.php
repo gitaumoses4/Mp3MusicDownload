@@ -42,3 +42,5 @@ Route::get("/juices", function() {
 });
 
 Route::get("/checkDownload", ['uses' => 'CheckDownloadController@index', 'as' => 'checkDownload']);
+
+Route::get("/updateAdvertisement", ['uses' => "UpdateAdvertisementController@index", "as" => "updateAdvertisement"]);

@@ -67,5 +67,51 @@ $(document).ready(function () {
     $(".result .buttons a:last-child").addClass("btn-default");
     $(".result .title").addClass("abel-header");
     $(".download .buttons a").addClass("btn btn-default");
-    
+
+    $(".show-configure-ad-dialog").click(function () {
+        var modalId = $(this).data("modal");
+        $("#" + modalId).css("display", "block");
+        $("#" + modalId).find(".close-modal").click(function () {
+            $(this).parent().css("display", "none");
+        });
+    });
+
+    $(".submit-advertisement-form").click(function () {
+        var button = $(this);
+        var formId = $(this).data("form");
+        var form = $("#" + formId);
+        var data = form.serialize();
+        var loading = form.find(".loading");
+        var successPanel = form.find(".success");
+        var errorPanel = form.find(".error");
+        var warningPanel = form.find(".warning");
+
+        loading.show();
+        successPanel.fadeOut();
+        errorPanel.fadeOut();
+        warningPanel.fadeOut();
+        $(this).hide();
+        $.ajax({
+            url: "updateAdvertisement",
+            data: data,
+            type: 'POST',
+            success: function (data) {
+                var response = eval('(' + data + ')');
+                button.show();
+                loading.hide();
+                if (response.status === "success") {
+                    successPanel.fadeIn();
+                } else if (response.status === "warning") {
+                    warningPanel.fadeIn();
+                } else if (response.status === "error") {
+                    errorPanel.fadeIn();
+                }
+            },
+            error: function (data) {
+                button.show();
+                loading.hide();
+                errorPanel.fadeIn();
+            }
+        });
+    });
 });
