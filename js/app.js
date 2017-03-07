@@ -94,7 +94,7 @@ $(document).ready(function () {
         $.ajax({
             url: "updateAdvertisement",
             data: data,
-            type: 'POST',
+            type: 'GET',
             success: function (data) {
                 var response = eval('(' + data + ')');
                 button.show();
