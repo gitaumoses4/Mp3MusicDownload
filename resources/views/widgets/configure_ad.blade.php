@@ -21,7 +21,7 @@
                     <div class="small-padding">
                         <div class="form-group">
                             <div class="material-switch pull-right">
-                                <input id="{{ $advert->adId }}-check" name="visibility" type="checkbox" @if($advert->visible == 1) {{ "checked" }} @endif >
+                                <input id="{{ $advert->adId }}-check" name="visibility" value="1" type="checkbox" @if($advert->visible == 1) {{ "checked" }} @endif >
                                        <label for="{{ $advert->adId }}-check" class="label-primary"></label>
                             </div>
                         </div>

@@ -10,9 +10,12 @@ class UpdateAdvertisementController extends Controller {
         if ($request->has("id")) {
             $id = $request->get("id");
             if ($request->has("code")) {
-                $visible = $request->get("visibility");
-                $code = htmlspecialchars($request->get("code"));
-
+                $code = htmlentities($request->get("code"));
+                if ($request->has("visibility")) {
+                    $visible = 1;
+                } else {
+                    $visible = 0;
+                }
                 $advert = \App\Advertisement::findOrFail($id);
                 $advert->code = $code;
                 $advert->visible = $visible;
