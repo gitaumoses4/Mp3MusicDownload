@@ -35,6 +35,7 @@ class MainController extends BaseController {
         $advertisements = array();
         foreach ($adverts as $advert) {
             $advertisements[$advert] = Advertisement::findOrFail($advert);
+            $advertisements[$advert]->adId = $advert;
         }
         $this->advertisements = $advertisements;
     }
