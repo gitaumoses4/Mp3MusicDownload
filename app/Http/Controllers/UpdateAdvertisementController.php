@@ -9,21 +9,18 @@ class UpdateAdvertisementController extends Controller {
     public function index(Request $request) {
         if ($request->has("id")) {
             $id = $request->get("id");
-            if ($request->has("code")) {
-                $code = htmlentities($request->get("code"));
-                if ($request->has("visibility")) {
-                    $visible = 1;
-                } else {
-                    $visible = 0;
-                }
-                $advert = \App\Advertisement::findOrFail($id);
-                $advert->code = $code;
-                $advert->visible = $visible;
-                $advert->save();
-                echo json_encode(array("status" => "success", "responseText" => "Advertisement updated successfully"));
+
+            $advert = \App\Advertisement::findOrFail($id);
+            $code = $request->has("code") ? htmlentities($request->get("code")) : $advert->code;
+            if ($request->has("visibility")) {
+                $visible = 1;
             } else {
-                echo json_encode(array("status" => "warning", "responseText" => "Advertisement code not specified"));
+                $visible = 0;
             }
+            $advert->code = $code;
+            $advert->visible = $visible;
+            $advert->save();
+            echo json_encode(array("status" => "success", "responseText" => "Advertisement updated successfully", "code" => $advert->code));
         } else {
             echo json_encode(array("status" => "error", "responseText" => "Advert id not specified"));
         }

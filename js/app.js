@@ -79,12 +79,14 @@ $(document).ready(function () {
     $(".submit-advertisement-form").click(function () {
         var button = $(this);
         var formId = $(this).data("form");
+        var advert = $(this).data("advert");
         var form = $("#" + formId);
         var data = form.serialize();
         var loading = form.find(".loading");
         var successPanel = form.find(".success");
         var errorPanel = form.find(".error");
         var warningPanel = form.find(".warning");
+        var preview = form.find(".code-preview");
 
         loading.show();
         successPanel.fadeOut();
@@ -100,6 +102,8 @@ $(document).ready(function () {
                 button.show();
                 loading.hide();
                 if (response.status === "success") {
+                    preview.html(response.code);
+                    advert.html(response.code);
                     successPanel.fadeIn();
                 } else if (response.status === "warning") {
                     warningPanel.fadeIn();
