@@ -6,13 +6,15 @@
             <file>file:/var/www/html/Mp3Downloader/resources/views/juices.php</file>
             <file>file:/var/www/html/Mp3Downloader/app/Globals/Constants.php</file>
             <file>file:/var/www/html/Mp3Downloader/css/app.css</file>
-            <file>file:/var/www/html/Mp3Downloader/resources/views/widgets/configure_ad.blade.php</file>
             <file>file:/var/www/html/Mp3Downloader/app/Http/Middleware/RedirectIfAuthenticated.php</file>
-            <file>file:/var/www/html/Mp3Downloader/app/Advertisement.php</file>
             <file>file:/var/www/html/Mp3Downloader/app/Http/Controllers/MainController.php</file>
+            <file>file:/var/www/html/Mp3Downloader/resources/views/layouts/body.blade.php</file>
+            <file>file:/var/www/html/Mp3Downloader/js/index.js</file>
+            <file>file:/var/www/html/Mp3Downloader/resources/views/widgets/configure_ad.blade.php</file>
+            <file>file:/var/www/html/Mp3Downloader/resources/views/layouts/main.blade.php</file>
+            <file>file:/var/www/html/Mp3Downloader/app/Advertisement.php</file>
             <file>file:/var/www/html/Mp3Downloader/resources/views/widgets/manage_sources.blade.php</file>
             <file>file:/var/www/html/Mp3Downloader/app/Http/Controllers/Auth/RegisterController.php</file>
-            <file>file:/var/www/html/Mp3Downloader/resources/views/layouts/body.blade.php</file>
             <file>file:/var/www/html/Mp3Downloader/app/Http/Controllers/SearchController.php</file>
             <file>file:/var/www/html/Mp3Downloader/js/app.js</file>
         </group>
