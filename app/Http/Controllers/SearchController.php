@@ -15,6 +15,7 @@ class SearchController extends Controller {
     public function search(Request $request) {
         $sources = Source::all();
         $recentSearches = RecentSearch::all();
+        $query = "";
         $searchSources = array(
             '4s' => 0,
             'ar' => 0,
