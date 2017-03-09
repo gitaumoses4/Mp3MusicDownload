@@ -5,15 +5,16 @@
         <group>
             <file>file:/var/www/html/Mp3Downloader/resources/views/juices.php</file>
             <file>file:/var/www/html/Mp3Downloader/app/Globals/Constants.php</file>
-            <file>file:/var/www/html/Mp3Downloader/resources/views/pages/index.blade.php</file>
-            <file>file:/var/www/html/Mp3Downloader/resources/views/widgets/popular_artists.blade.php</file>
-            <file>file:/var/www/html/Mp3Downloader/resources/views/widgets/navigation.blade.php</file>
-            <file>file:/var/www/html/Mp3Downloader/public/index.php</file>
-            <file>file:/var/www/html/Mp3Downloader/app/MusicInfo.php</file>
+            <file>file:/var/www/html/Mp3Downloader/css/app.css</file>
+            <file>file:/var/www/html/Mp3Downloader/resources/views/widgets/configure_ad.blade.php</file>
+            <file>file:/var/www/html/Mp3Downloader/app/Http/Middleware/RedirectIfAuthenticated.php</file>
+            <file>file:/var/www/html/Mp3Downloader/app/Advertisement.php</file>
+            <file>file:/var/www/html/Mp3Downloader/app/Http/Controllers/MainController.php</file>
+            <file>file:/var/www/html/Mp3Downloader/resources/views/widgets/manage_sources.blade.php</file>
+            <file>file:/var/www/html/Mp3Downloader/app/Http/Controllers/Auth/RegisterController.php</file>
             <file>file:/var/www/html/Mp3Downloader/resources/views/layouts/body.blade.php</file>
             <file>file:/var/www/html/Mp3Downloader/app/Http/Controllers/SearchController.php</file>
-            <file>file:/var/www/html/Mp3Downloader/resources/views/pages/top_artists.blade.php</file>
-            <file>file:/var/www/html/Mp3Downloader/public/css/index.css</file>
+            <file>file:/var/www/html/Mp3Downloader/js/app.js</file>
         </group>
     </open-files>
 </project-private>
