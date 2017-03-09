@@ -5,7 +5,6 @@
             {{ Globals::siteTitle() }}
         </title>
         <meta property = "og:url"               content = "http://www.mp3musicdownload.hol.es" />
-        <meta property = "fb:app_id"              content = "599554240240141"/>
         <meta property = "og:type"               content = "article" />
         <meta property = "og:title"              content = "Free Mp3 music downloader website." />
         <meta property = "og:description"        content = "Search for and download music and mp3 audio clips for free." />
