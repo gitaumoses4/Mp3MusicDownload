@@ -14,7 +14,7 @@
         <meta name="twitter:url" content="http://www.mp3musicdownload.hol.es">
         <meta name="twitter:title" content="Free Mp3 music downloader website">
         <meta name="twitter:description" content="Search for and download music and mp3 audio clips for free.">
-        <meta name="twitter:image" content="images/banner.jpg">'
+        <meta name="twitter:image" content="images/banner.jpg">
         <link rel="stylesheet" href="css/app.css"/>
         <link rel="stylesheet" href="css/index.css"/>
         <link href="https://fonts.googleapis.com/css?family=Abel|Josefin+Sans|Quicksand" rel="stylesheet"/> 
