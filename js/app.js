@@ -7,6 +7,11 @@
     js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1";
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
+
+function htmlEntities(str) {
+        return String(str).replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
 $(document).ready(function () {
     $(function () {
         $(document).on("keyup", "#search-field", function () {
@@ -90,7 +95,7 @@ $(document).ready(function () {
         var formId = $(this).data("form");
         var advert = $(this).data("advert");
         var form = $("#" + formId);
-        var data = form.serialize();
+        var data = htmlEntities(form.serialize());
         var loading = form.find(".loading");
         var successPanel = form.find(".success");
         var errorPanel = form.find(".error");
