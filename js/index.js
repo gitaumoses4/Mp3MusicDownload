@@ -396,7 +396,7 @@ $(document).ready(function () {
         }), "Close" == $(this).text())
             return 1 == c[0] && delete d[c[1]], $("#download_" + b).remove(), $(this).text("Download"), !1;
         $(this).text("Close");
-        var myParams = 'title=' + escape($("#result_" + b + " .title").html()) + "&description=http://www.mp3musicdownload.hol.es/";
+        var myParams = 'title=' + escape($("#result_" + b + " .title").html()) + "&description=http://www.getMp3song.com/";
         var e = '<div id="download_' + b + '" class="download"><p class="title">TITLE</p><p class="check-progress">PROGRESS_TEXT</p><div class="buttons" style="CSS_BUTTONS"><a href="LINK_DOWNLOAD" rel="nofollow" class="link_download ' + b + '">Download</a><a href="" class="link_cloud_menu ' + b + '">Save to Cloud</a><a class="link_facebook" data-title=' + myParams + ' href="https://www.facebook.com/sharer.php?u=' + pageUrl + '" rel="nofollow" target="_blank">Share on Facebook</a></div><div class="cloud_menu"><div class="cloud_buttons"><p>Choose a cloud:</p><a href="" class="d ' + b + '">Dropbox</a><a href="" class="g ' + b + '">Google Drive</a><a href="" class="m ' + b + '">Microsoft OneDrive</a></div><p class="cloud_progress"></p><div class="cloud_ready"><a id="upload_' + b + '" href="" class="' + b + '">Save</a></div></div><div class="ad">' + a + "</div></div>  ";
         switch (c[0]) {
             case 1:
