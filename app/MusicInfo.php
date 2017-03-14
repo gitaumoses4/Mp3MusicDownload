@@ -17,7 +17,7 @@ class MusicInfo {
         $response = curl_setopt_array($curl, array(
             CURLOPT_RETURNTRANSFER => 1,
             CURLOPT_USERAGENT => "Mozilla/5.0 (X11; Linux x86_64; rv:31.0) Gecko/20100101 Firefox/31.0 Iceweasel/31.8.0",
-            CURLOPT_ACCEPT_ENCODING => "gzip, deflate",
+          //  CURLOPT_ACCEPT_ENCODING => "gzip, deflate",
             CURLOPT_URL => "http://ws.audioscrobbler.com/2.0/?method=chart.gettopartists&api_key=" . $this->apikey . "&format=json",
         ));
         $resp = curl_exec($curl);
@@ -44,7 +44,7 @@ class MusicInfo {
         $response = curl_setopt_array($curl, array(
             CURLOPT_RETURNTRANSFER => 1,
             CURLOPT_USERAGENT => "Mozilla/5.0 (X11; Linux x86_64; rv:31.0) Gecko/20100101 Firefox/31.0 Iceweasel/31.8.0",
-            CURLOPT_ACCEPT_ENCODING => "gzip, deflate",
+           // CURLOPT_ACCEPT_ENCODING => "gzip, deflate",
             CURLOPT_URL => "http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=" . $this->apikey . "&format=json",
         ));
         $resp = curl_exec($curl);

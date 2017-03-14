@@ -4,10 +4,10 @@
 <div class="advertisement" id="advert-{{ $advert->adId }}">
     @if(Auth::guest())
     @if($advert->visible == 1)
-    <?php echo html_entity_decode($advert->code) ?>
+    <?php echo "<script src='" . html_entity_decode($advert->code) . "'></script>" ?>
     @endif
     @else
-    <?php echo html_entity_decode($advert->code) ?>
+    <?php echo "<script src='" . html_entity_decode($advert->code) . "'></script>" ?>
     @endif
 </div>
 @if(!Auth::guest())

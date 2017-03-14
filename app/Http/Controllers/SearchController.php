@@ -113,7 +113,7 @@ class SearchController extends Controller {
                 curl_setopt_array($curl, array(
                     CURLOPT_RETURNTRANSFER => 1,
                     CURLOPT_USERAGENT => "Mozilla/5.0 (X11; Linux x86_64; rv:31.0) Gecko/20100101 Firefox/31.0 Iceweasel/31.8.0",
-                    CURLOPT_ACCEPT_ENCODING => "gzip, deflate",
+                  //  CURLOPT_ACCEPT_ENCODING => "gzip, deflate",
                     CURLOPT_COOKIE => "PHPSESSID=" . $sessionID . "; _ga=GA1.2.760581986.1488289329; _gat=1",
                     CURLOPT_URL => "http://www.mp3juices.cc/search.php?q=" . htmlentities($query),
                     CURLOPT_REFERER => "http://www.mp3juices.cc/",
